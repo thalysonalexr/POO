@@ -10,7 +10,21 @@ package aula01;
  * @author Lab
  */
 public class Aula01 {
+    
+    private int idade;
+    
+    private String nome;
 
+    public static int soma(int a, int b) {
+        return a + b;
+    }
+    
+    public void hello() {
+        System.out.println(
+                "Hello World " + this.nome.toUpperCase() + " idade > " + this.idade
+        );
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -137,6 +151,19 @@ public class Aula01 {
                 System.out.println("Sei la");
                 break;
         }
+        
+        Aula01 aula01 = new Aula01();
+        Aula01 aula02 = new Aula01();
+        
+        aula01.nome = "Thayson";
+        aula01.idade = 22;
+        
+        aula02.nome = "Alexandre";
+        aula02.idade = 23;
+        
+        aula01.hello();
+        aula02.hello();
     }
+    
     
 }
