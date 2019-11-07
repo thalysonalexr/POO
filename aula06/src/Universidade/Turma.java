@@ -27,7 +27,7 @@ public class Turma {
         this.disciplina = disciplina;
     }
     
-    public void addAluno(Aluno a) {
+    public void matricular(Aluno a) {
         this.alunos.add(a);
     }
 
