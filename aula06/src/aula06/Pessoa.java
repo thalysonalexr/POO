@@ -11,7 +11,7 @@ package aula06;
  */
 public class Pessoa {
     
-    private String nome;
+    protected String nome;
     private String endereco;
     private String telefone;
     

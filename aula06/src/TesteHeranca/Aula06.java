@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula06;
+package TesteHeranca;
+
+import aula06.*;
 
 /**
  *
@@ -26,10 +28,6 @@ public class Aula06 {
         System.out.println(p);
         System.out.println(pj);
         System.out.println(pf);
-        
-        p.nome = "Joao"; // Atributo protegido, acessivel
-        pj.nome = "Joao";
-        pf.nome = "Joao";
     }
     
 }
