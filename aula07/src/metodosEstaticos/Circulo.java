@@ -3,35 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula07;
+package metodosEstaticos;
+
+import aula07.*;
 
 /**
  *
  * @author Lab
  */
-public final class Retangulo extends FormaGeometrica {
-    
-    double largura;
-    double altura;
+public final class Circulo extends FormaGeometrica {
 
-    public Retangulo(double largura, double altura) {
+    private final double raio;
+
+    public Circulo(double raio) {
         super();
-        this.largura = largura;
-        this.altura = altura;
+        this.raio = raio;
     }
 
     @Override
     public double calcularArea() {
-        return this.largura * this.altura;
+        return CalculoArea.calcularAreaCirculo(this.raio);
     }
 
     @Override
     public double calcularPerimetro() {
-        return (this.altura * this.largura) * 2;
+        return 2 * Math.PI * this.raio;
     }
 
     @Override
     public String quemSou() {
-        return "Retangulo";
+        return "Circulo";
     }
 }

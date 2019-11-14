@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula07;
+package metodosEstaticos;
+
+import aula07.*;
 
 /**
  *
@@ -22,7 +24,7 @@ public final class Retangulo extends FormaGeometrica {
 
     @Override
     public double calcularArea() {
-        return this.largura * this.altura;
+        return CalculoArea.calcularAreaRetangulo(this.largura, this.altura);
     }
 
     @Override
