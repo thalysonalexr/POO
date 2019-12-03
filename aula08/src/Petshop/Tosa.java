@@ -24,7 +24,7 @@ public class Tosa extends Procedimento {
 
     @Override
     public void imprimirDescricaoProcedimento() {
-        System.out.println("Procedimento: " 
+        System.out.println("  * Procedimento: " 
                 + Tosa.getPROCEDIMENTO() + "|" 
                 + super.getNomeFuncionario() + "|"
                 + this.getTipoTosa());

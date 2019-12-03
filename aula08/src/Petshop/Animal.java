@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Animal {
     
     private String nome;
-    private ArrayList<Procedimento> procedimentos;
+    private ArrayList<Procedimento> procedimentos = new ArrayList<Procedimento>();
     private String raca;
     private String tipo;
 
@@ -29,9 +29,8 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(String nome, ArrayList<Procedimento> procedimentos, String raca, String tipo) {
+    public Animal(String nome, String raca, String tipo) {
         this.nome = nome;
-        this.procedimentos = procedimentos;
         this.raca = raca;
         this.tipo = tipo;
     }

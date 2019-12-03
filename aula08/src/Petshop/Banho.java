@@ -24,8 +24,8 @@ public class Banho extends Procedimento {
 
     @Override
     public void imprimirDescricaoProcedimento() {
-        System.out.println("Procedimento: " 
-                + Tosa.getPROCEDIMENTO() + "|" 
+        System.out.println("  * Procedimento: " 
+                + Banho.getPROCEDIMENTO() + "|" 
                 + super.getNomeFuncionario() + "|"
                 + this.getShampoo());
     }
