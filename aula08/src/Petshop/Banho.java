@@ -12,7 +12,7 @@ package Petshop;
 public class Banho extends Procedimento {
     
     private String shampoo;
-    private static String PROCEDIMENTO = "Banho";
+    private static final String PROCEDIMENTO = "Banho";
 
     public Banho() {
     }
@@ -49,12 +49,5 @@ public class Banho extends Procedimento {
      */
     public static String getPROCEDIMENTO() {
         return PROCEDIMENTO;
-    }
-
-    /**
-     * @param aPROCEDIMENTO the PROCEDIMENTO to set
-     */
-    public static void setPROCEDIMENTO(String aPROCEDIMENTO) {
-        PROCEDIMENTO = aPROCEDIMENTO;
     }
 }

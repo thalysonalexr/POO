@@ -13,7 +13,7 @@ public class Vacina extends Procedimento {
     
     private String nomeVacina;
     private String validadeVacina;
-    private static String PROCEDIMENTO = "Vacina";
+    private static final String PROCEDIMENTO = "Vacina";
 
     public Vacina() {
     }
@@ -66,12 +66,5 @@ public class Vacina extends Procedimento {
      */
     public static String getPROCEDIMENTO() {
         return PROCEDIMENTO;
-    }
-
-    /**
-     * @param aPROCEDIMENTO the PROCEDIMENTO to set
-     */
-    public static void setPROCEDIMENTO(String aPROCEDIMENTO) {
-        PROCEDIMENTO = aPROCEDIMENTO;
     }
 }
