@@ -9,14 +9,6 @@ package Petshop;
  *
  * @author Lab
  */
-public class Vacina extends Procedimento {
+public class Vacina {
 
-    @Override
-    public void imprimirDescricaoProcedimento() {
-        System.out.println(
-                "Procedimento: " 
-                + Tosa.getPROCEDIMENTO() + "|" 
-                + super.getNomeFuncionario() + "|"
-                + this.tipoTosa);
-    }
 }
