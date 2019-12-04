@@ -9,19 +9,16 @@ package lista01;
  *
  * @author visitante
  */
-public class Question8 {
+public class Question9 {
     
-    public static boolean primo(int valor) {
+    public static void primos(int i, int j) {
         
-        int divisoes = 0;
-        
-        for (int i = 1; i <= valor; i++) {
-            if (valor % i == 0) {
-                divisoes++;
+        for (int begin = i; begin <= j; begin++) {
+            if (Question8.primo(begin)) {
+                System.out.print(begin + ", ");
             }
         }
-
-        return divisoes == 2;
+        
     }
-
+    
 }
