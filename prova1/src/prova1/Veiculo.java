@@ -75,7 +75,8 @@ public class Veiculo extends Recurso {
 
     @Override
     public String toString() {
-        return " - Ano: " + this.ano + "\n"
+        return "Recurso:\n*" + Veiculo.RECURSO + "*\n"
+                + " - Ano: " + this.ano + "\n"
                 + " - Lugares: " + this.lugares + "\n"
                 + " - Marca: " + this.marca + "\n"
                 + " - Id: " + this.getId() + "\n"

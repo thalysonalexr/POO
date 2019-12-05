@@ -59,7 +59,8 @@ public class Portatil extends Recurso {
 
     @Override
     public String toString() {
-        return " - Eletrônico: " + (this.isEletronico ? "SIM": "NÃO") + "\n"
+        return "Recurso:\n*" + Portatil.RECURSO + "*\n"
+                +" - Eletrônico: " + (this.isEletronico ? "SIM": "NÃO") + "\n"
                 + " - Marca: " + this.marca + "\n"
                 + " - Id: " + this.getId() + "\n"
                 + " - Nome: " + this.getNome() + "\n"

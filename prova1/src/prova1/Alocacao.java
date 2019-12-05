@@ -33,8 +33,8 @@ public class Alocacao {
         return "--- NOVA ALOCAÇÃO DE RECURSO ---\n"
                 + "Data de devolução prevista: " + this.dataDevolucaoPrevista + "\n"
                 + "Data devolvida: " + this.dataDevolvido + "\n"
-                + "Devolvido: " + (this.devolvido ? "SIM": "não") + "\n"
-                + "Recurso:\n" + this.recurso + "\n"
+                + "Devolvido: " + (this.devolvido ? "SIM": "NÃO") + "\n"
+                + this.recurso + "\n"
                 + "Funcionário:\n" + this.responsavel
                 + "-----------------------------\n";
     }

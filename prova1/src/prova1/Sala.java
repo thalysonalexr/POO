@@ -59,7 +59,8 @@ public class Sala extends Recurso {
 
     @Override
     public String toString() {
-        return " - Lugares: " + this.lugares + "\n"
+        return "Recurso:\n*" + Sala.RECURSO + "*\n"
+                + " - Lugares: " + this.lugares + "\n"
                 + " - Tipo: " + this.tipo + "\n"
                 + " - Id: " + this.getId() + "\n"
                 + " - Nome: " + this.getNome() + "\n"

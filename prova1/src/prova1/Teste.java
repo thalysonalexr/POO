@@ -51,7 +51,7 @@ public class Teste {
         funcionarios.add(new Funcionario("Desenvolvedor Web", 101, "Thalyson Rodrigues"));
         funcionarios.add(new Funcionario("Professor", 102, "Maikon Bueno"));
         funcionarios.add(new Funcionario("Bibliotecário", 103, "Antonio João da Silva"));
-        funcionarios.add(new Funcionario("Enfermeira", 104, "Rochelle das Dores"));
+        funcionarios.add(new Funcionario("Secretária", 104, "Rochelle das Dores"));
         funcionarios.add(new Funcionario("Analista de Sistemas", 105, "Ana Beatriz Guttemberg"));
         
         return funcionarios;
@@ -83,8 +83,7 @@ public class Teste {
     
     public static void imprimir(ArrayList<Alocacao> alocacoes) {
         
-        for (Alocacao a: alocacoes) {
+        for (Alocacao a: alocacoes)
             System.out.println(a);
-        } 
     }
 }
