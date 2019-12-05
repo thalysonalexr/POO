@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lista02;
+package lista02.Question10;
 
 /**
  *
  * @author visitante
  */
 public class Teste {
-
+    
     public static void main(String[] args) {
         
-        
+        for (Integer n: (new NumerosPrimos(1, 100)).retornaNumerosPrimos()) {
+            System.out.print(n + ", ");
+        }
         
     }
     

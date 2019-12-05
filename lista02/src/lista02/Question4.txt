@@ -1,0 +1,9 @@
+Como são implementadas as associações simples (binárias), agregações e composições?
+
+> 
+
+Associação: quando existe uma eventual relação entre a classe A e a classe B mas cada uma
+dessas classes não dependem da outra para existirem.
+Agregação: não deixa de ser uma associação mas existe uma exclusividade e 
+determinados objetos só podem se relacionar a um objeto específico.
+Composição: quando determinada classe A está contida em na classe B.

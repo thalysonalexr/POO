@@ -1,0 +1,4 @@
+O que é um relacionamento de herança?
+
+> Uma herança é a agregação de características de uma classe 
+superior. A classe filha herda os atributos e métodos da super classe.

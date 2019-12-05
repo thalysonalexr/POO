@@ -1,0 +1,4 @@
+O que significa instanciar uma classe?
+
+> É a criação de objetos a partir de uma classe, este então agrega todas
+as características da mesma.

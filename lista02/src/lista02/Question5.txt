@@ -1,0 +1,3 @@
+Para que serve um constructor?
+
+> Para instanciar um objeto a partir de uma classe podendo atribuir valores.

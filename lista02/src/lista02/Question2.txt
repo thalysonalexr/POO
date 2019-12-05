@@ -1,0 +1,5 @@
+O que compõe um objeto?
+
+> O objeto é composto das características da classe que se dividem
+basicamente entre atributos (características) e 
+métodos (comportamentos ou definição de dados).

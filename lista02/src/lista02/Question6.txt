@@ -1,0 +1,4 @@
+> Descreva qual o relacionamento da herança com os modificadores de acesso.
+
+A classe filha só podera acessar diretamente atributos protegidos e públicos
+da super classe.
