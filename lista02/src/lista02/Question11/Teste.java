@@ -13,13 +13,17 @@ public class Teste {
     
     public static void main(String[] args) {
         
-        System.out.println(validateCpf("048.180.131-61"));
+        System.out.println(validateCpf("111.1a0.131-61"));
+        System.out.println(validateCpf("11118013161"));
+        System.out.println(validateCpf("111.180131-61"));
+        System.out.println(validateCpf("111180.131-61"));
+        System.out.println(validateCpf("111.180.131-61"));
         
     }
     
     public static boolean validateCpf(String cpf) {
         
-        char[] permitidos = new char[]{'-','.', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        char[] permitidos = new char[]{'-','.', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
         
         if (cpf.length() != 14)
             return false;
