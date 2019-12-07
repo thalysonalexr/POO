@@ -3,21 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lista02.Question14;
+package lista02.Question14_15;
 
 /**
  *
  * @author thalyson
  */
-public class Departamento {
+abstract class Pessoa {
     
+    private int id;
     private String nome;
 
-    public Departamento() {
+    public Pessoa(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
 
-    public Departamento(String nome) {
-        this.nome = nome;
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -36,6 +49,7 @@ public class Departamento {
     
     @Override
     public String toString() {
-        return "Departamento: " + this.nome + "\n";
+        return "Id: " + this.id + "\n"
+               + "Nome: " + this.nome + "\n";
     }
 }

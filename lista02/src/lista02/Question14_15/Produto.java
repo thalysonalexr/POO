@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lista02.Question14;
+package lista02.Question14_15;
 
 /**
  *
@@ -15,15 +15,17 @@ public class Produto {
     private double preco;
     private String descricao;
     private Fornecedor fornecedor;
+    private Departamento departamento;
 
     public Produto() {
     }
 
-    public Produto(int id, double preco, String descricao, Fornecedor fornecedor) {
+    public Produto(int id, double preco, String descricao, Fornecedor fornecedor, Departamento departamento) {
         this.id = id;
         this.preco = preco;
         this.descricao = descricao;
         this.fornecedor = fornecedor;
+        this.departamento = departamento;
     }
 
     /**
@@ -80,6 +82,20 @@ public class Produto {
      */
     public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
+    }
+    
+    /**
+     * @return the departamento
+     */
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    /**
+     * @param departamento the departamento to set
+     */
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
     }
     
     @Override
