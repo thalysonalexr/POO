@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lista03.Question16;
+package lista03.Question16_17;
 
 import java.util.Scanner;
 
