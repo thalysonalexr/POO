@@ -20,6 +20,8 @@
 
 * Construa um diagrama UML de classes contendo a modelagem OO do problema especificado.
 
+![Diagrama UML](https://raw.githubusercontent.com/thalysonalexr/POO/master/projeto1/docs/medical-clinic.png)
+
 * Implementar todas as classes do diagrama
 
 * Construir um menu com opções numéricas para inserir, apagar e listar todos os itens (em linha de comando mesmo).
