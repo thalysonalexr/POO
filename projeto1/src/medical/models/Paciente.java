@@ -8,7 +8,7 @@ package medical.models;
 public class Paciente extends Pessoa {
 
     private int id;
-    private static int nextId;
+    private static int nextId = 1;
     private String endereco;
     private String telefone;
     private String dataNascimento;

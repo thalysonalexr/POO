@@ -1,24 +1,61 @@
 package medical.controllers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import medical.helpers.FileHandler;
 
 /**
  *
  * @author thalysonalexr
  * @author Aldo Riboli
+ * @param <E>
  */
-abstract public class Controller {
+public abstract class Controller <E> implements ControllerInterface {
     
     protected FileHandler fileHandler;
+    protected String className = null;
+    protected ArrayList<E> data = new ArrayList<>();
     
-    abstract public void cadastrar(Serializable object);
+    /**
+     *
+     * @param path
+     */
+    public Controller(String path) {
+        this.fileHandler = new FileHandler(this.data, path);
+    }
     
-    abstract public void listar();
+    @Override
+    public void cadastrar(Serializable object) {
+        this.data.add((E) object);
+    }
     
-    abstract public void deletar(int id);
+    @Override
+    public void listar() {
+        if (this.data.isEmpty()) {
+            System.out.println("Nenhum " + this.className + " registrado.");
+            return;
+        }
+        
+        this.data.forEach((e) -> {
+            System.out.println(e);
+        });
+    }
     
-    abstract public void save();
+    @Override
+    public void save() {
+        if ( ! this.fileHandler.writeInFile()) {
+            System.out.println("Erro ao escrever no arquivo de " + this.className);
+        }
+        
+        System.out.println("Arquivo " + this.className + " salvo com sucesso!");
+    }
     
-    abstract public void restore();
+    @Override
+    public void restore() {
+        try {
+            this.data = this.fileHandler.readFile();
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Erro ao restaurar dados do arquivo " + this.className);
+        }
+    }
 }

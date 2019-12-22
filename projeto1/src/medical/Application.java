@@ -1,7 +1,8 @@
 package medical;
 
 import java.util.Scanner;
-import medical.controllers.Controller;
+import medical.controllers.AgendamentoController;
+import medical.controllers.ControllerInterface;
 import medical.controllers.EspecialidadeController;
 import medical.controllers.MedicoController;
 import medical.controllers.PacienteController;
@@ -19,14 +20,36 @@ public class Application {
      */
     public static void main(String[] args) {
         
-        Controller especialidade = new EspecialidadeController();
-        Controller medico = new MedicoController();
-        Controller paciente = new PacienteController();
+        // instanciar controllers da aplicacao
+        ControllerInterface esp = new EspecialidadeController();
+        ControllerInterface med = new MedicoController();
+        ControllerInterface pac = new PacienteController();
         
-        especialidade.restore();
-        medico.restore();
-        paciente.restore();
-
+        AgendamentoController age = new AgendamentoController();
+        
+        // restaurar dados de arquivos para objetos
+        esp.restore();
+        med.restore();
+        pac.restore();
+        age.restore();
+        
+        Application.run(esp, med, pac, age);
+    }
+    
+    private static int readId() {
+        Scanner reader = new Scanner(System.in);
+        
+        System.out.print("ID: ");
+        return Integer.parseInt(reader.nextLine());
+    }
+    
+    private static void run(
+            ControllerInterface especialidade,
+            ControllerInterface medico,
+            ControllerInterface paciente,
+            AgendamentoController agendamento
+    ) {
+        
         int option = -1;
         
         do {
@@ -53,6 +76,10 @@ public class Application {
                     medico.listar();
                     medico.deletar(Application.readId());
                     break;
+                case 7:
+                    medico.listar();
+                    agendamento.relatorioAtendimentosPorMedico(Application.readId());
+                    break;
                 case 8:
                     paciente.cadastrar(Factory.createPaciente());
                     break;
@@ -62,23 +89,22 @@ public class Application {
                 case 10:
                     paciente.listar();
                     paciente.deletar(Application.readId());
+                case 11:
+                    paciente.listar();
+                    agendamento.relatorioConsultasPorPaciente(Application.readId());
+                    break;
+                case 12:
+                    agendamento.cadastrar(Factory.createAgendamento((MedicoController) medico, (PacienteController) paciente));
                 case 0:
                     medico.save();
                     especialidade.save();
                     paciente.save();
+                    agendamento.save();
                     break;
                 default:
                     System.out.println("Opcao incorreta! Tente novamente.");
             }
             
         } while (option != 0);
-        
-    }
-    
-    public static int readId() {
-        Scanner reader = new Scanner(System.in);
-        
-        System.out.print("ID: ");
-        return Integer.parseInt(reader.nextLine());
     }
 }

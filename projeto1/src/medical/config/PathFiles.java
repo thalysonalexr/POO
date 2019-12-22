@@ -5,7 +5,7 @@ package medical.config;
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class PathFiles {
+public abstract class PathFiles {
     
     public static final String AGENDAMENTO = "data/agendamentos.bin";
     public static final String ESPECIALIDADE = "data/especialidades.bin";

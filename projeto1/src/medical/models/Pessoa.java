@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-abstract public class Pessoa implements Serializable {
+public abstract class Pessoa implements Serializable {
     
     protected String nome;
     protected String cpf;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Medico extends Pessoa {
     
     private int id;
-    private static int nextId;
+    private static int nextId = 1;
     private String crm;
     private Double salario;
     private ArrayList<Especialidade> especialidades = new ArrayList<>();

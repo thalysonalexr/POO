@@ -1,12 +1,16 @@
 package medical.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class Agendamento {
+public class Agendamento implements Serializable {
     
+    private int id;
+    private static int nextId = 1;
     private Paciente paciente;
     private Medico medico;
     private String data;
@@ -18,12 +22,27 @@ public class Agendamento {
     }
 
     public Agendamento(Paciente paciente, Medico medico, String data, String hora, String observacoes, boolean ativo) {
+        this.id = Agendamento.nextId++;
         this.paciente = paciente;
         this.medico = medico;
         this.data = data;
         this.hora = hora;
         this.observacoes = observacoes;
         this.ativo = ativo;
+    }
+    
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

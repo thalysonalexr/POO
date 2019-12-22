@@ -1,9 +1,7 @@
 package medical.controllers;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import medical.config.PathFiles;
-import medical.helpers.FileHandler;
 import medical.models.Paciente;
 
 /**
@@ -12,35 +10,28 @@ import medical.models.Paciente;
  * @author Aldo Riboli
  */
 public class PacienteController extends Controller {
-    
-    private ArrayList<Paciente> pacientes = new ArrayList<>();
-    
+
     public PacienteController() {
-        this.fileHandler = new FileHandler(this.pacientes, PathFiles.PACIENTES);
+        super(PathFiles.PACIENTES);
+        super.className = "Paciente";
     }
-
+    
     @Override
-    public void cadastrar(Serializable object) {
-        this.pacientes.add((Paciente) object);
-    }
-
-    @Override
-    public void listar() {
-        if (this.pacientes.isEmpty()) {
-            System.out.println("Nenhum paciente registrado.");
-            return;
+    public Paciente search(int id) {
+        for (Paciente e: this.getPacientes()) {
+            if (id == e.getId()) {
+                return e;
+            }
         }
         
-        this.pacientes.forEach((e) -> {
-            System.out.println(e);
-        });
+        return null;
     }
     
     @Override
     public void deletar(int id) {
-        for (Paciente e: this.pacientes) {
+        for (Paciente e: this.getPacientes()) {
             if (id == e.getId()) {
-                this.pacientes.remove(e);
+                this.data.remove(e);
                 System.out.println("Paciente deletado com sucesso!");
                 break;
             }
@@ -49,22 +40,18 @@ public class PacienteController extends Controller {
         System.out.println("Nenhum ID encontrado");
     }
 
-    @Override
-    public void save() {
-        if ( ! this.fileHandler.writeInFile()) {
-            System.out.println("Erro ao escrever no arquivo.");
-        }
+    /**
+     * Converte um ArrayList<Object> de Object para ArrayList<Paciente>
+     * 
+     * @return the ArrayList<Paciente>
+     */
+    public ArrayList<Paciente> getPacientes() {
         
-        System.out.println("Arquivo de pacientes salvo com sucesso!");
+        ArrayList<Paciente> pacientes = new ArrayList<>();
+        
+        for (Object e: this.data)
+            pacientes.add((Paciente) e);
+        
+        return pacientes;
     }
-
-    @Override
-    public void restore() {
-        try {
-            this.pacientes = this.fileHandler.readFile();
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erro ao restaurar dados de arquivo.");
-        }
-    }
-    
 }
