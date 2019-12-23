@@ -1,13 +1,14 @@
 package medical.models;
 
 import java.util.ArrayList;
+import medical.helpers.ScanInterface;
 
 /**
  *
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class Medico extends Pessoa {
+public class Medico extends Pessoa implements ScanInterface {
     
     private int id;
     private static int nextId = 1;
@@ -17,6 +18,7 @@ public class Medico extends Pessoa {
     public static final String TIPO = "-- Medico --";
 
     public Medico() {
+        this.id = Medico.nextId++;
     }
 
     public Medico(String nome, String cpf, String crm, Double salario) {
@@ -100,5 +102,23 @@ public class Medico extends Pessoa {
                + "Salario: " + String.format("%.2f", this.salario) + " R$\n"
                + "Especialidades:\n"
                + especialidades;
+    }
+
+    @Override
+    public String[] getAtributos() {
+        return new String[]{"nome", "cpf", "crm", "salario"};
+    }
+
+    @Override
+    public String[] getTipos() {
+        return new String[]{"s", "s", "s", "d"};
+    }
+
+    @Override
+    public void setValores(ArrayList<Object> valores) {
+        this.nome = (String) valores.get(0);
+        this.cpf = (String) valores.get(1);
+        this.crm = (String) valores.get(2);
+        this.salario = (Double) valores.get(3);
     }
 }

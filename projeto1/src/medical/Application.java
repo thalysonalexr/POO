@@ -44,10 +44,10 @@ public class Application {
     }
     
     private static void run(
-            ControllerInterface especialidade,
-            ControllerInterface medico,
-            ControllerInterface paciente,
-            AgendamentoController agendamento
+        ControllerInterface especialidade,
+        ControllerInterface medico,
+        ControllerInterface paciente,
+        AgendamentoController agendamento
     ) {
         
         int option = -1;

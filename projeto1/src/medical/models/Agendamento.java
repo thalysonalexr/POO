@@ -1,13 +1,15 @@
 package medical.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import medical.helpers.ScanInterface;
 
 /**
  *
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class Agendamento implements Serializable {
+public class Agendamento implements Serializable, ScanInterface {
     
     private int id;
     private static int nextId = 1;
@@ -19,6 +21,7 @@ public class Agendamento implements Serializable {
     private boolean ativo;
 
     public Agendamento() {
+        this.id = Agendamento.nextId++;
     }
 
     public Agendamento(Paciente paciente, Medico medico, String data, String hora, String observacoes, boolean ativo) {
@@ -147,5 +150,22 @@ public class Agendamento implements Serializable {
                + this.paciente
                + this.medico
                + "Obs: " + this.observacoes;
+    }
+
+    @Override
+    public String[] getAtributos() {
+        return new String[]{"data", "hora", "observacoes"};
+    }
+
+    @Override
+    public String[] getTipos() {
+        return new String[]{"s", "s", "s"};
+    }
+
+    @Override
+    public void setValores(ArrayList<Object> valores) {
+        this.data = (String) valores.get(0);
+        this.hora = (String) valores.get(1);
+        this.observacoes = (String) valores.get(2);
     }
 }
