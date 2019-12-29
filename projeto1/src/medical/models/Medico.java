@@ -21,6 +21,14 @@ public class Medico extends Pessoa implements ScanInterface {
         this.id = Medico.nextId++;
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        System.out.println("objeto clonado!");
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+
     public Medico(String nome, String cpf, String crm, Double salario) {
         super(nome, cpf);
         this.id = Medico.nextId++;

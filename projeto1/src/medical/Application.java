@@ -95,6 +95,7 @@ public class Application {
                     break;
                 case 12:
                     agendamento.cadastrar(Factory.createAgendamento((MedicoController) medico, (PacienteController) paciente));
+                    break;
                 case 0:
                     medico.save();
                     especialidade.save();

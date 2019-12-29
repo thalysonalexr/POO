@@ -33,7 +33,7 @@ public class PacienteController extends Controller {
             if (id == e.getId()) {
                 this.data.remove(e);
                 System.out.println("Paciente deletado com sucesso!");
-                break;
+                return;
             }
         }
         

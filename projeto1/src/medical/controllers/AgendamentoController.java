@@ -59,7 +59,7 @@ public class AgendamentoController extends Controller {
             if (id == e.getId()) {
                 this.data.remove(e);
                 System.out.println("Agendamento deletado com sucesso!");
-                break;
+                return;
             }
         }
         

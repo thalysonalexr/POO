@@ -47,8 +47,11 @@ public abstract class Factory {
                         exists = true;
                 }
                 
-                if (exists)
+                if (exists) {
+                    System.out.println("Especialidade ja cadastrada. Tente novamente.");
                     continue;
+                }
+                    
                 
                 // registrar a escolha caso exista
                 for (Especialidade e: especialidade.getEspecialidades()) {
@@ -111,7 +114,6 @@ public abstract class Factory {
             
             if (medico == null) {
                 System.out.println("Medico nao encontrado. Tente novamente.");
-                continue;
             } else {
                 break;
             }
