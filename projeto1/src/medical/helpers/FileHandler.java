@@ -1,5 +1,7 @@
 package medical.helpers;
 
+import java.io.File;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,61 +14,73 @@ import java.util.ArrayList;
  *
  * @author thalysonalexr
  * @author Aldo Riboli
- * @param <E>
  */
-public class FileHandler <E> {
-    
-    private final ArrayList<E> data;
+public class FileHandler {
+
     private final String file;
     
-    public FileHandler(ArrayList<E> data, String file) {
-        this.data = data;
+    public FileHandler(String file) {
         this.file = file;
     }
     
-    public ArrayList<E> readFile() throws ClassNotFoundException {
+    public <E> ArrayList<E> readFile(ArrayList<E> data) {
         
-        FileInputStream fin;
-        ObjectInputStream oin;
+        File f = new File(this.file);
         
-        E object;
-        
-        try {
-            fin = new FileInputStream(this.file);
-            oin = new ObjectInputStream(fin);
-            
-            while ((object = (E) oin.readObject()) != null) {
-                this.data.add(object);
+        if (f.exists() && !f.isDirectory()) {
+     
+            FileInputStream fin;
+            ObjectInputStream oin;
+
+            try {
+                fin = new FileInputStream(this.file);
+                oin = new ObjectInputStream(fin);
+                E object;
+                
+                int size = oin.readInt();
+                
+                for (int i = 0; i < size; i++) {
+                    object = (E) oin.readObject();
+                    data.add(object);
+                }
+
+                oin.close();
+                fin.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("[Erro] Arquivo " + this.file + " nao encontrado.");
+            } catch (EOFException e) {
+                System.out.println("[Erro] Final do arquivo inesperado.");
+            } catch (IOException e) {
+                System.out.println("[Erro] Houve um erro durante a leitura.");
+            } catch (ClassNotFoundException e) {
+                System.out.println("[Erro] Nao foi possivel interpretar conteudo do arquivo.");
             }
-            
-            fin.close();
-            oin.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Arquivo " + this.file + " nao encontrado");
-        } catch (IOException e) {
-            System.out.println("Houve um erro durante a leitura");
+
+            return data;
         }
         
-        return this.data;
+        return new ArrayList<>();
     }
     
-    public boolean writeInFile() {
+    public <E> boolean writeFile(ArrayList<E> data) {
         
         FileOutputStream fout;
-        
+
         try {
             fout = new FileOutputStream(this.file);
             ObjectOutputStream oout = new ObjectOutputStream(fout);
             
-            for (E object: this.data)
+            oout.writeInt(data.size());
+
+            for (E object: data)
                 oout.writeObject(object);
-            
+
             oout.close();
             fout.close();
         } catch (IOException e) {
             return false;
         }
-        
+
         return true;
     }
 }

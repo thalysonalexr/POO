@@ -1,5 +1,7 @@
 package medical.models;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import medical.helpers.ScanInterface;
@@ -22,6 +24,11 @@ public class Agendamento implements Serializable, ScanInterface {
 
     public Agendamento() {
         this.id = Agendamento.nextId++;
+    }
+    
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        Agendamento.nextId = this.id + 1;
     }
 
     public Agendamento(Paciente paciente, Medico medico, String data, String hora, String observacoes, boolean ativo) {

@@ -1,5 +1,7 @@
 package medical.models;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import medical.helpers.ScanInterface;
@@ -9,19 +11,24 @@ import medical.helpers.ScanInterface;
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class Especialidade implements ScanInterface, Serializable {
+public class Especialidade implements Serializable, ScanInterface {
     
     private int id;
     private static int nextId = 1;
     private String nome;
     private String descricao;
-
+    
     public Especialidade() {
-        this.id = this.nextId++;
+        this.id = Especialidade.nextId++;
+    }
+    
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        Especialidade.nextId = this.id + 1;
     }
 
     public Especialidade(String nome, String descricao) {
-        this.id = this.nextId++;
+        this.id = Especialidade.nextId++;
         this.nome = nome;
         this.descricao = descricao;
     }

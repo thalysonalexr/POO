@@ -21,7 +21,7 @@ public abstract class Controller <E> implements ControllerInterface {
      * @param path
      */
     public Controller(String path) {
-        this.fileHandler = new FileHandler(this.data, path);
+        this.fileHandler = new FileHandler(path);
     }
     
     @Override
@@ -43,19 +43,17 @@ public abstract class Controller <E> implements ControllerInterface {
     
     @Override
     public void save() {
-        if ( ! this.fileHandler.writeInFile()) {
-            System.out.println("Erro ao escrever no arquivo de " + this.className);
+        if ( ! this.data.isEmpty()) {
+            if ( ! this.fileHandler.writeFile(this.data)) {
+                System.out.println("Erro ao escrever no arquivo de " + this.className);
+            } else {
+                System.out.println("Arquivo " + this.className + " salvo com sucesso!");
+            }
         }
-        
-        System.out.println("Arquivo " + this.className + " salvo com sucesso!");
     }
     
     @Override
     public void restore() {
-        try {
-            this.data = this.fileHandler.readFile();
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Erro ao restaurar dados do arquivo " + this.className);
-        }
+        this.data = this.fileHandler.readFile(this.data);
     }
 }

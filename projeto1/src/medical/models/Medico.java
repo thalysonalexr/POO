@@ -1,5 +1,7 @@
 package medical.models;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import medical.helpers.ScanInterface;
 
@@ -20,14 +22,11 @@ public class Medico extends Pessoa implements ScanInterface {
     public Medico() {
         this.id = Medico.nextId++;
     }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        System.out.println("objeto clonado!");
-        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        Medico.nextId = this.id + 1;
     }
-    
-    
 
     public Medico(String nome, String cpf, String crm, Double salario) {
         super(nome, cpf);

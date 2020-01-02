@@ -1,5 +1,7 @@
 package medical.models;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import medical.helpers.ScanInterface;
 
@@ -19,6 +21,11 @@ public class Paciente extends Pessoa implements ScanInterface {
 
     public Paciente() {
         this.id = Paciente.nextId++;
+    }
+    
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        Paciente.nextId = this.id + 1;
     }
 
     public Paciente(String nome, String cpf, String endereco, String telefone, String dataNascimento) {
