@@ -36,7 +36,7 @@ public abstract class Factory {
             String option = "s";
             
             do {
-                especialidade.listar();
+                especialidade.list();
                 System.out.print("Selecione a especialidade pelo ID: ");
                 int esp = Integer.parseInt(reader.nextLine());
                 
@@ -89,7 +89,7 @@ public abstract class Factory {
         Paciente paciente = null;
         
         while (true) {
-            pacienteControl.listar();
+            pacienteControl.list();
             
             System.out.print("Selecione o paciente pelo ID: ");
             int idPaciente = Integer.parseInt(reader.nextLine());
@@ -106,7 +106,7 @@ public abstract class Factory {
         Medico medico = null;
         
         while (true) {
-            medicoControl.listar();
+            medicoControl.list();
             
             System.out.print("Selecione o medico pelo ID: ");
             int idMedico = Integer.parseInt(reader.nextLine());

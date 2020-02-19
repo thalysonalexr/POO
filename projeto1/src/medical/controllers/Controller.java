@@ -1,6 +1,5 @@
 package medical.controllers;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import medical.helpers.FileHandler;
 import medical.models.ModelInterface;
@@ -18,7 +17,6 @@ public abstract class Controller <E> implements ControllerInterface {
     protected ArrayList<E> data = new ArrayList<>();
     
     /**
-     *
      * @param path
      */
     public Controller(String path) {
@@ -26,24 +24,23 @@ public abstract class Controller <E> implements ControllerInterface {
     }
     
     @Override
-    public void cadastrar(ModelInterface object) {
+    public void register(ModelInterface object) {
         this.data.add((E) object);
     }
     
     @Override
-    public void listar() {
+    public void list() {
         if (this.data.isEmpty()) {
             System.out.println("Nenhum " + this.className + " registrado.");
             return;
         }
         
-        this.data.forEach((e) -> {
+        for (E e: this.data)
             System.out.println(e);
-        });
     }
     
-        @Override
-    public void deletar(int id) {
+    @Override
+    public void remove(int id) {
 
         for (ModelInterface e: this.getModels()) {
             if (id == e.getId()) {

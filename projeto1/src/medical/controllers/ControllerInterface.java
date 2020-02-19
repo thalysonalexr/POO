@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package medical.controllers;
 
 import java.util.ArrayList;
@@ -14,11 +9,11 @@ import medical.models.ModelInterface;
  */
 public interface ControllerInterface {
     
-    public void cadastrar(ModelInterface object);
+    public void register(ModelInterface object);
     
-    public void listar();
+    public void list();
     
-    public void deletar(int id);
+    public void remove(int id);
     
     public ModelInterface search(int id);
     

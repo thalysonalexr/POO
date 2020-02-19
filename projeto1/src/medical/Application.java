@@ -15,9 +15,6 @@ import medical.helpers.Factory;
  */
 public class Application {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
         // instanciar controllers da aplicacao
@@ -57,44 +54,44 @@ public class Application {
             
             switch (option) {
                 case 1:
-                    especialidade.cadastrar(Factory.createEspecialidade());
+                    especialidade.register(Factory.createEspecialidade());
                     break;
                 case 2:
-                    especialidade.listar();
+                    especialidade.list();
                     break;
                 case 3:
-                    especialidade.listar();
-                    especialidade.deletar(Application.readId());
+                    especialidade.list();
+                    especialidade.remove(Application.readId());
                     break;
                 case 4:
-                    medico.cadastrar(Factory.createMedico((EspecialidadeController) especialidade));
+                    medico.register(Factory.createMedico((EspecialidadeController) especialidade));
                     break;
                 case 5:
-                    medico.listar();
+                    medico.list();
                     break;
                 case 6:
-                    medico.listar();
-                    medico.deletar(Application.readId());
+                    medico.list();
+                    medico.remove(Application.readId());
                     break;
                 case 7:
-                    medico.listar();
+                    medico.list();
                     agendamento.relatorioAtendimentosPorMedico(Application.readId());
                     break;
                 case 8:
-                    paciente.cadastrar(Factory.createPaciente());
+                    paciente.register(Factory.createPaciente());
                     break;
                 case 9:
-                    paciente.listar();
+                    paciente.list();
                     break;
                 case 10:
-                    paciente.listar();
-                    paciente.deletar(Application.readId());
+                    paciente.list();
+                    paciente.remove(Application.readId());
                 case 11:
-                    paciente.listar();
+                    paciente.list();
                     agendamento.relatorioConsultasPorPaciente(Application.readId());
                     break;
                 case 12:
-                    agendamento.cadastrar(Factory.createAgendamento((MedicoController) medico, (PacienteController) paciente));
+                    agendamento.register(Factory.createAgendamento((MedicoController) medico, (PacienteController) paciente));
                     break;
                 case 0:
                     medico.save();
