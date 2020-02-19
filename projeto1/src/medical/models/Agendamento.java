@@ -2,7 +2,6 @@ package medical.models;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import medical.helpers.ScanInterface;
 
@@ -12,7 +11,7 @@ import medical.helpers.ScanInterface;
  * @author Aldo Riboli
  * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
-public class Agendamento implements Serializable, ScanInterface, ModelInterface {
+public class Agendamento implements ScanInterface, ModelInterface {
     
     private int id;
     private static int nextId = 1;
@@ -26,11 +25,6 @@ public class Agendamento implements Serializable, ScanInterface, ModelInterface 
     public Agendamento() {
         this.id = Agendamento.nextId++;
     }
-    
-    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        ois.defaultReadObject();
-        Agendamento.nextId = this.id + 1;
-    }
 
     public Agendamento(Paciente paciente, Medico medico, String data, String hora, String observacoes, boolean ativo) {
         this.id = Agendamento.nextId++;
@@ -40,6 +34,21 @@ public class Agendamento implements Serializable, ScanInterface, ModelInterface 
         this.hora = hora;
         this.observacoes = observacoes;
         this.ativo = ativo;
+    }
+    
+    /**
+     * Realiza a leitura padrao do objeto logo apos define para
+     * o atributo estatico da class "nextId' o valor do id do
+     * objeto + 1. Ao final da leitura de todos os objetos do
+     * arquivo a classe sabera qual o proximo Id a ser criado.
+     * 
+     * @param ois
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        Agendamento.nextId = this.id + 1;
     }
     
     /**

@@ -1,14 +1,12 @@
 package medical.models;
 
-import java.io.Serializable;
-
 /**
  *
  * @author thalysonalexr
  * @author Aldo Riboli
  * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
-public abstract class Pessoa implements Serializable, ModelInterface {
+public abstract class Pessoa implements ModelInterface {
     
     protected String nome;
     protected String cpf;

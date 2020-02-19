@@ -31,7 +31,7 @@ public abstract class Controller <E> implements ControllerInterface {
     @Override
     public void list() {
         if (this.data.isEmpty()) {
-            System.out.println("Nenhum " + this.className + " registrado.");
+            System.out.println("Nenhum(a) " + this.className + " registrado(a).");
             return;
         }
         
@@ -45,12 +45,12 @@ public abstract class Controller <E> implements ControllerInterface {
         for (ModelInterface e: this.getModels()) {
             if (id == e.getId()) {
                 this.data.remove(e);
-                System.out.println("Especialidade deletada com sucesso!");
+                System.out.println(this.className + " deletado(a) com sucesso!");
                 return;
             }
         }
         
-        System.out.println("Nenhum ID encontrado");
+        System.out.println("Nenhum ID encontrado.");
     }
 
     @Override
@@ -65,23 +65,20 @@ public abstract class Controller <E> implements ControllerInterface {
     
     @Override
     public void save() {
-        if ( ! this.data.isEmpty()) {
-            if ( ! this.fileHandler.writeFile(this.data)) {
-                System.out.println("Erro ao escrever no arquivo de " + this.className);
-            } else {
-                System.out.println("Arquivo " + this.className + " salvo com sucesso!");
-            }
+        if ( ! this.fileHandler.writeFile(this.data)) {
+            System.out.println("Erro ao escrever no arquivo de " + this.className);
+        } else {
+            System.out.println("Arquivo " + this.className + " salvo com sucesso!");
         }
     }
     
     @Override
     public void restore() {
-        this.data = this.fileHandler.readFile(this.data);
+        this.data = this.fileHandler.readFile();
     }
     
     /**
      * Converte um ArrayList<Object> para ArrayList<ModelInterface>
-     * 
      * @return the ArrayList<ModelInterface>
      */
     @Override

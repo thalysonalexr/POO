@@ -1,11 +1,11 @@
 package medical.helpers;
 
 import java.io.File;
-import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.EOFException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class FileHandler {
         this.file = file;
     }
     
-    public <E> ArrayList<E> readFile(ArrayList<E> data) {
+    public <E> ArrayList<E> readFile() {
         
         File f = new File(this.file);
         
@@ -32,6 +32,7 @@ public class FileHandler {
      
             FileInputStream fin;
             ObjectInputStream oin;
+            ArrayList<E> data = new ArrayList<>();
 
             try {
                 fin = new FileInputStream(this.file);
@@ -65,7 +66,12 @@ public class FileHandler {
     
     public <E> boolean writeFile(ArrayList<E> data) {
         
+        File f = new File(this.file);
         FileOutputStream fout;
+        
+        if (data.isEmpty() && !f.exists()) {
+            return true;
+        }
 
         try {
             fout = new FileOutputStream(this.file);

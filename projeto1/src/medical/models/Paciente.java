@@ -23,11 +23,6 @@ public class Paciente extends Pessoa implements ScanInterface {
     public Paciente() {
         this.id = Paciente.nextId++;
     }
-    
-    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        ois.defaultReadObject();
-        Paciente.nextId = this.id + 1;
-    }
 
     public Paciente(String nome, String cpf, String endereco, String telefone, String dataNascimento) {
         super(nome, cpf);
@@ -35,6 +30,21 @@ public class Paciente extends Pessoa implements ScanInterface {
         this.endereco = endereco;
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
+    }
+    
+    /**
+     * Realiza a leitura padrao do objeto logo apos define para
+     * o atributo estatico da class "nextId' o valor do id do
+     * objeto + 1. Ao final da leitura de todos os objetos do
+     * arquivo a classe sabera qual o proximo Id a ser criado.
+     * 
+     * @param ois
+     * @throws IOException
+     * @throws ClassNotFoundException 
+     */
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        ois.defaultReadObject();
+        Paciente.nextId = this.id + 1;
     }
     
     /**

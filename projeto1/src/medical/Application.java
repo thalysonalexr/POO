@@ -87,6 +87,7 @@ public class Application {
                 case 10:
                     paciente.list();
                     paciente.remove(Application.readId());
+                    break;
                 case 11:
                     paciente.list();
                     agendamento.relatorioConsultasPorPaciente(Application.readId());

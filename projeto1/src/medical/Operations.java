@@ -41,6 +41,6 @@ public class Operations {
                + "10 - Deletar paciente\n"
                + "11 - Relatorio de consultas por paciente\n"
                + "12 - Cadastrar novo agendamento de consulta\n"
-               + " 0 - Sair do Sistema\n>> ";
+               + "00 - Sair do Sistema\n>> ";
     }
 }
