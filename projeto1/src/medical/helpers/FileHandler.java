@@ -78,6 +78,7 @@ public class FileHandler {
             oout.close();
             fout.close();
         } catch (IOException e) {
+            System.out.println(e.getMessage());
             return false;
         }
 
