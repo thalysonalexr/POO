@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package medical;
 
 import java.util.Scanner;
 
 /**
  *
- * @author thalyson
+ * @author thalysonalexr
+ * @author Aldo Riboli
+ * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
 public class Operations {
     

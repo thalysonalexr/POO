@@ -3,10 +3,12 @@ package medical.controllers;
 import java.util.ArrayList;
 import medical.config.PathFiles;
 import medical.models.Agendamento;
+
 /**
  *
  * @author thalysonalexr
  * @author Aldo Riboli
+ * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
 public class AgendamentoController extends Controller {
 

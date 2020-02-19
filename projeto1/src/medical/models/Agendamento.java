@@ -10,6 +10,7 @@ import medical.helpers.ScanInterface;
  *
  * @author thalysonalexr
  * @author Aldo Riboli
+ * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
 public class Agendamento implements Serializable, ScanInterface, ModelInterface {
     

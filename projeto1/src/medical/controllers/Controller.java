@@ -8,7 +8,7 @@ import medical.models.ModelInterface;
  *
  * @author thalysonalexr
  * @author Aldo Riboli
- * @param <E>
+ * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
 public abstract class Controller <E> implements ControllerInterface {
     
