@@ -11,7 +11,7 @@ import medical.helpers.ScanInterface;
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class Agendamento implements Serializable, ScanInterface {
+public class Agendamento implements Serializable, ScanInterface, ModelInterface {
     
     private int id;
     private static int nextId = 1;

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public abstract class Pessoa implements Serializable {
+public abstract class Pessoa implements Serializable, ModelInterface {
     
     protected String nome;
     protected String cpf;

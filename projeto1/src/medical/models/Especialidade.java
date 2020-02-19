@@ -11,7 +11,7 @@ import medical.helpers.ScanInterface;
  * @author thalysonalexr
  * @author Aldo Riboli
  */
-public class Especialidade implements Serializable, ScanInterface {
+public class Especialidade implements Serializable, ScanInterface, ModelInterface {
     
     private int id;
     private static int nextId = 1;
@@ -36,6 +36,7 @@ public class Especialidade implements Serializable, ScanInterface {
     /**
      * @return the id
      */
+    @Override
     public int getId() {
         return id;
     }

@@ -3,6 +3,7 @@ package medical.controllers;
 import java.io.Serializable;
 import java.util.ArrayList;
 import medical.helpers.FileHandler;
+import medical.models.ModelInterface;
 
 /**
  *
@@ -25,7 +26,7 @@ public abstract class Controller <E> implements ControllerInterface {
     }
     
     @Override
-    public void cadastrar(Serializable object) {
+    public void cadastrar(ModelInterface object) {
         this.data.add((E) object);
     }
     
@@ -39,6 +40,30 @@ public abstract class Controller <E> implements ControllerInterface {
         this.data.forEach((e) -> {
             System.out.println(e);
         });
+    }
+    
+        @Override
+    public void deletar(int id) {
+
+        for (ModelInterface e: this.getModels()) {
+            if (id == e.getId()) {
+                this.data.remove(e);
+                System.out.println("Especialidade deletada com sucesso!");
+                return;
+            }
+        }
+        
+        System.out.println("Nenhum ID encontrado");
+    }
+
+    @Override
+    public ModelInterface search(int id) {
+        for (ModelInterface e: this.getModels()) {
+            if (id == e.getId()) {
+                return e;
+            }
+        }
+        return null;
     }
     
     @Override
@@ -55,5 +80,21 @@ public abstract class Controller <E> implements ControllerInterface {
     @Override
     public void restore() {
         this.data = this.fileHandler.readFile(this.data);
+    }
+    
+    /**
+     * Converte um ArrayList<Object> para ArrayList<ModelInterface>
+     * 
+     * @return the ArrayList<ModelInterface>
+     */
+    @Override
+    public ArrayList<ModelInterface> getModels() {
+        
+        ArrayList<ModelInterface> models = new ArrayList<>();
+        
+        for (Object e: this.data)
+            models.add((ModelInterface) e);
+        
+        return models;
     }
 }

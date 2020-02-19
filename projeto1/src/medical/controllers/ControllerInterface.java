@@ -5,7 +5,8 @@
  */
 package medical.controllers;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import medical.models.ModelInterface;
 
 /**
  *
@@ -13,16 +14,17 @@ import java.io.Serializable;
  */
 public interface ControllerInterface {
     
-    public void cadastrar(Serializable object);
+    public void cadastrar(ModelInterface object);
     
     public void listar();
     
     public void deletar(int id);
     
-    public Serializable search(int id);
+    public ModelInterface search(int id);
     
     public void save();
     
     public void restore();
-    
+
+    public ArrayList<ModelInterface> getModels();
 }

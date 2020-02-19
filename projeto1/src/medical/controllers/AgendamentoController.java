@@ -52,32 +52,9 @@ public class AgendamentoController extends Controller {
             System.out.println("Nenhuma consulta foi agendada para o paciente " + id);
         }
     }
-
-    @Override
-    public void deletar(int id) {
-        for (Agendamento e: this.getAgendamentos()) {
-            if (id == e.getId()) {
-                this.data.remove(e);
-                System.out.println("Agendamento deletado com sucesso!");
-                return;
-            }
-        }
-        
-        System.out.println("Nenhum ID encontrado");
-    }
-
-    @Override
-    public Agendamento search(int id) {
-        for (Agendamento e: this.getAgendamentos()) {
-            if (id == e.getId()) {
-                return e;
-            }
-        }
-        return null;
-    }
     
     /**
-     * Converte um ArrayList<Object> de Object para ArrayList<Agendamento>
+     * Converte um ArrayList<Object> para ArrayList<Agendamento>
      * 
      * @return the ArrayList<Agendamento>
      */

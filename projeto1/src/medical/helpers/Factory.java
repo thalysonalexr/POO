@@ -1,12 +1,13 @@
 package medical.helpers;
 
 import java.util.Scanner;
-import medical.controllers.EspecialidadeController;
+import medical.controllers.ControllerInterface;
 import medical.controllers.MedicoController;
 import medical.controllers.PacienteController;
 import medical.models.Agendamento;
 import medical.models.Especialidade;
 import medical.models.Medico;
+import medical.models.ModelInterface;
 import medical.models.Paciente;
 
 /**
@@ -23,14 +24,14 @@ public abstract class Factory {
         return e;
     }
     
-    public static Medico createMedico(EspecialidadeController especialidade) {
+    public static Medico createMedico(ControllerInterface especialidade) {
         
         Medico m = new Medico();
         PreencheObjeto.preencher(m);
         
         Scanner reader = new Scanner(System.in);
         
-        if ( ! especialidade.getEspecialidades().isEmpty()) {
+        if ( ! especialidade.getModels().isEmpty()) {
             
             String option = "s";
             
@@ -54,9 +55,9 @@ public abstract class Factory {
                     
                 
                 // registrar a escolha caso exista
-                for (Especialidade e: especialidade.getEspecialidades()) {
+                for (ModelInterface e: especialidade.getModels()) {
                     if (esp == e.getId()) {
-                        m.adicionarEspecialidade(e);
+                        m.adicionarEspecialidade((Especialidade) e);
                         break;
                     }
                 }
@@ -79,7 +80,7 @@ public abstract class Factory {
     public static Agendamento createAgendamento(MedicoController medicoControl, PacienteController pacienteControl) {
         
         // verifica se tem ao minimo um medico e paciente registrado
-        if (medicoControl.getMedicos().isEmpty() || pacienteControl.getPacientes().isEmpty()) {
+        if (medicoControl.getModels().isEmpty() || pacienteControl.getModels().isEmpty()) {
             System.out.println("Deve realizar primeiro o cadastro de medicos ou pacientes");
             return null;
         }
@@ -93,7 +94,7 @@ public abstract class Factory {
             System.out.print("Selecione o paciente pelo ID: ");
             int idPaciente = Integer.parseInt(reader.nextLine());
             
-            paciente = pacienteControl.search(idPaciente);
+            paciente = (Paciente) pacienteControl.search(idPaciente);
             
             if (paciente == null) {
                 System.out.println("Paciente nao encontrado. Tente novamente.");
@@ -110,7 +111,7 @@ public abstract class Factory {
             System.out.print("Selecione o medico pelo ID: ");
             int idMedico = Integer.parseInt(reader.nextLine());
             
-            medico = medicoControl.search(idMedico);
+            medico = (Medico) medicoControl.search(idMedico);
             
             if (medico == null) {
                 System.out.println("Medico nao encontrado. Tente novamente.");
