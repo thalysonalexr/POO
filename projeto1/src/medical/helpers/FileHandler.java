@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author Aldo Riboli
  * @see https://github.com/thalysonalexr/POO/tree/master/projeto1
  */
-public class FileHandler {
+public class FileHandler implements FileHandlerInterface {
 
     private final String file;
     
@@ -24,6 +24,7 @@ public class FileHandler {
         this.file = file;
     }
     
+    @Override
     public <E> ArrayList<E> readFile() {
         
         File f = new File(this.file);
@@ -64,6 +65,7 @@ public class FileHandler {
         return new ArrayList<>();
     }
     
+    @Override
     public <E> boolean writeFile(ArrayList<E> data) {
         
         File f = new File(this.file);

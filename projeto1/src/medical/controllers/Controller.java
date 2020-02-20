@@ -2,6 +2,7 @@ package medical.controllers;
 
 import java.util.ArrayList;
 import medical.helpers.FileHandler;
+import medical.helpers.FileHandlerInterface;
 import medical.models.ModelInterface;
 
 /**
@@ -12,7 +13,7 @@ import medical.models.ModelInterface;
  */
 public abstract class Controller <E> implements ControllerInterface {
     
-    protected FileHandler fileHandler;
+    private FileHandlerInterface fileHandler;
     protected String className = null;
     protected ArrayList<E> data = new ArrayList<>();
     
