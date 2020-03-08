@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- *
+ * design pattern: singleton
  * @author thalysonalexr <thalysonrodrigues.dev@gmail.com>
  */
 public class FileBinaryHandler implements FileHandlerInterface {

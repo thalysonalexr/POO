@@ -3,7 +3,7 @@ package medical.core.helpers;
 import java.util.ArrayList;
 
 /**
- *
+ * design pattern: composition
  * @author thalysonalexr <thalysonrodrigues.dev@gmail.com>
  */
 public class Logger {

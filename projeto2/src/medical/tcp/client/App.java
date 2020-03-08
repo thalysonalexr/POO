@@ -39,7 +39,6 @@ public class App {
                     client.send(new Service("medicos", "destroy", InputID.show()));
                 })
                 .add("Buscar medico (ID)", () -> {
-                    
                     client.receive(new Service("medicos", "show", InputID.show()), (data) -> {
                         if (null != data) {
                             System.out.println(data.get(0));

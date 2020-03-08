@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import medical.core.helpers.PreencheObjeto;
 
 /**
- *
+ * design pattern: composition and simple factory
  * @author thalysonalexr <thalysonrodrigues.dev@gmail.com>
  */
 public class MedicoFactory {

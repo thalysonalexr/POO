@@ -3,14 +3,14 @@ package medical.tcp.server;
 import medical.core.controllers.MedicoController;
 
 /**
- *
+ * design pattern: facade para Server
  * @author thalysonalexr <thalysonrodrigues.dev@gmail.com>
  */
 public class App {
 
     public static void process() {
         
-        Server server = Server.create();
+        ServerInterface server = Server.create();
         
         server.controllers(MedicoController.create());
         

@@ -12,7 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 /**
- *
+ * design pattern: singleton
  * @author thalysonalexr <thalysonrodrigues.dev@gmail.com>
  * @param <E>
  */
