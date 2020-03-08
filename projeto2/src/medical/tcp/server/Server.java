@@ -16,7 +16,7 @@ import medical.tcp.server.config.Env;
 import medical.tcp.server.services.ServiceLayer;
 
 /**
- * design pattern: composition
+ * design pattern: composite
  * @author thalysonalexr <thalysonrodrigues.dev@gmail.com>
  * @param <E>
  */

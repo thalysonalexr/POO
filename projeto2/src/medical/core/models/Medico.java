@@ -12,10 +12,10 @@ import medical.core.helpers.ScanInterface;
  */
 public class Medico extends Pessoa implements ScanInterface {
     
-    private int id;
-    private static int nextId = 1;
+    private int id;    
     private String crm;
     private Double salario;
+    private static int nextId = 1;
 
     public Medico() {
         this.id = Medico.nextId++;

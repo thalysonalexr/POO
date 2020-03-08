@@ -13,19 +13,19 @@ import medical.core.models.ModelInterface;
  */
 public abstract class Controller <E> implements ControllerInterface {
     
-    private FileHandlerInterface fileHandler;
+    private final FileHandlerInterface fileHandler;
     protected String className = null;
     protected ArrayList<E> data = new ArrayList<>();
     
     /**
      * @param path
      */
-    public Controller(String path) {
+    public Controller(final String path) {
         this.fileHandler = FileBinaryHandler.instance(path);
     }
     
     @Override
-    public void register(ArrayList<ModelInterface> data) {
+    public void register(final ArrayList<ModelInterface> data) {
         if (this.data.isEmpty()) {
             this.data = (ArrayList<E>) data;
         } else {
@@ -34,10 +34,10 @@ public abstract class Controller <E> implements ControllerInterface {
     }
     
     @Override
-    public ArrayList<ModelInterface> findById(int id) {
-        for (ModelInterface e: this.getModels()) {
+    public ArrayList<ModelInterface> findById(final int id) {
+        for (final ModelInterface e: this.getModels()) {
             if (id == e.getId()) {
-                ArrayList<ModelInterface> data = new ArrayList<ModelInterface>();
+                final ArrayList<ModelInterface> data = new ArrayList<ModelInterface>();
                 data.add(e);
                 return data;
             }
@@ -46,15 +46,13 @@ public abstract class Controller <E> implements ControllerInterface {
     }
     
     @Override
-    public boolean remove(int id) {
-
-        for (ModelInterface e: this.getModels()) {
+    public boolean remove(final int id) {
+        for (final ModelInterface e: this.getModels()) {
             if (id == e.getId()) {
                 this.data.remove(e);
                 return true;
             }
         }
-        
         return false;
     }
     
@@ -63,7 +61,6 @@ public abstract class Controller <E> implements ControllerInterface {
         if (this.data.isEmpty()) {
             return null;
         }
-        
         return this.getModels();
     }
     
@@ -93,9 +90,9 @@ public abstract class Controller <E> implements ControllerInterface {
     @Override
     public ArrayList<ModelInterface> getModels() {
         
-        ArrayList<ModelInterface> models = new ArrayList<>();
+        final ArrayList<ModelInterface> models = new ArrayList<>();
         
-        for (Object e: this.data)
+        for (final Object e: this.data)
             models.add((ModelInterface) e);
         
         return models;
