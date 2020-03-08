@@ -1,7 +1,7 @@
 package medical.tcp.client;
 
 import java.util.ArrayList;
-import tcp.server.services.ServiceLayer;
+import medical.tcp.server.services.ServiceLayer;
 
 /**
  *

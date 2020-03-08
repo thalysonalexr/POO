@@ -1,7 +1,7 @@
 package medical;
 
 import medical.core.ApplicationInterface;
-import medical.core.lib.menu.Menu;
+import medical.core.helpers.menu.Menu;
 
 
 /**

@@ -1,4 +1,4 @@
-package medical.core.lib.menu;
+package medical.core.helpers.menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;

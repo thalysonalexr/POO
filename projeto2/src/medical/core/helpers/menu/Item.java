@@ -1,4 +1,4 @@
-package medical.core.lib.menu;
+package medical.core.helpers.menu;
 
 /**
  *

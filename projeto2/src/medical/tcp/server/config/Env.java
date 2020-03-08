@@ -1,4 +1,4 @@
-package tcp.server.config;
+package medical.tcp.server.config;
 
 /**
  *

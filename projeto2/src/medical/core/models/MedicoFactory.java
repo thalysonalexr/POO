@@ -2,7 +2,7 @@ package medical.core.models;
 
 import java.util.ArrayList;
 
-import medical.core.lib.PreencheObjeto;
+import medical.core.helpers.PreencheObjeto;
 
 /**
  *

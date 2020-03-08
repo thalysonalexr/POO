@@ -8,9 +8,9 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-import medical.core.lib.Logger;
-import medical.core.lib.FileTextHandler;
-import tcp.server.services.ServiceLayer;
+import medical.core.helpers.Logger;
+import medical.core.helpers.FileTextHandler;
+import medical.tcp.server.services.ServiceLayer;
 
 /**
  *

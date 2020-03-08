@@ -10,10 +10,10 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 import medical.core.controllers.ControllerInterface;
-import medical.core.lib.FileTextHandler;
-import medical.core.lib.Logger;
-import tcp.server.config.Env;
-import tcp.server.services.ServiceLayer;
+import medical.core.helpers.FileTextHandler;
+import medical.core.helpers.Logger;
+import medical.tcp.server.config.Env;
+import medical.tcp.server.services.ServiceLayer;
 
 /**
  *

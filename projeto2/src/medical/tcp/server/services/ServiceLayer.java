@@ -1,4 +1,4 @@
-package tcp.server.services;
+package medical.tcp.server.services;
 
 import java.io.Serializable;
 import java.util.ArrayList;
