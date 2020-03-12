@@ -8,9 +8,10 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-import medical.core.helpers.Logger;
-import medical.core.helpers.FileTextHandler;
+import medical.helpers.Logger;
+import medical.helpers.FileTextHandler;
 import medical.tcp.server.services.ServiceLayer;
+import medical.tcp.server.config.Env;
 
 /**
  *
@@ -33,7 +34,7 @@ public class Client {
         this.logger.add("application running...");
         
         try {
-            try (Socket socket = new Socket("localhost", 5000)) {
+            try (Socket socket = new Socket(Env.HOST, Env.PORT)) {
                 this.logger.add("connected.");
                 
                 OutputStream os = socket.getOutputStream();

@@ -2,7 +2,7 @@ package medical.core.models;
 
 import java.util.ArrayList;
 
-import medical.core.helpers.PreencheObjeto;
+import medical.helpers.PreencheObjeto;
 
 /**
  * design pattern: composite and simple factory

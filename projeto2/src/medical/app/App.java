@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 import medical.core.ApplicationInterface;
 import medical.core.controllers.ControllerInterface;
-import medical.core.controllers.MedicoController;
-import medical.core.helpers.Continue;
-import medical.core.helpers.InputID;
-import medical.core.helpers.menu.Menu;
 import medical.core.models.MedicoFactory;
 import medical.core.models.ModelInterface;
+import medical.helpers.Continue;
+import medical.helpers.InputID;
+import medical.helpers.menu.Menu;
 
 /**
  *
@@ -18,9 +17,9 @@ import medical.core.models.ModelInterface;
 public class App implements ApplicationInterface {
     
     @Override
-    public void run() {
+    public void run(ArrayList<ControllerInterface> controllers) {
         
-        ControllerInterface controller = MedicoController.create();
+        ControllerInterface controller = controllers.get(0);
         
         while (true) {
             controller.restore();

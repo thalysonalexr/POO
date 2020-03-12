@@ -1,5 +1,6 @@
 package medical.tcp.server;
 
+import java.util.ArrayList;
 import medical.core.controllers.ControllerInterface;
 
 /**
@@ -10,6 +11,6 @@ public interface ServerInterface {
     
     public void listen();
 
-    public void controllers(ControllerInterface controller);
+    public void controllers(ArrayList<ControllerInterface> controller);
     
 }

@@ -1,4 +1,4 @@
-package medical.core.helpers;
+package medical.helpers;
 
 import java.util.ArrayList;
 import java.util.Scanner;

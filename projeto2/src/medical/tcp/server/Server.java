@@ -10,8 +10,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 import medical.core.controllers.ControllerInterface;
-import medical.core.helpers.FileTextHandler;
-import medical.core.helpers.Logger;
+import medical.helpers.FileTextHandler;
+import medical.helpers.Logger;
 import medical.tcp.server.config.Env;
 import medical.tcp.server.services.ServiceLayer;
 
@@ -29,7 +29,7 @@ public class Server <E> extends Thread implements ServerInterface {
         "server:dev",
         FileTextHandler.instance(Env.LOGS_SERVER)
     );
-    private ArrayList<ControllerInterface> controllers = new ArrayList<>();
+    private ArrayList<ControllerInterface> controllers = null;
     
     public static Server create() {
         return new Server();
@@ -109,9 +109,9 @@ public class Server <E> extends Thread implements ServerInterface {
     
     /**
      * register a new controller
-     * @param controller 
+     * @param controllers
      */
-    public void controllers(ControllerInterface controller) {
-        this.controllers.add(controller);
+    public void controllers(ArrayList<ControllerInterface> controllers) {
+        this.controllers = controllers;
     }
 }

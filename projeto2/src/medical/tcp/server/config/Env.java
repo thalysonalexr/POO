@@ -7,5 +7,6 @@ package medical.tcp.server.config;
 public abstract class Env {
     
     public static final int PORT = 5000;
+    public static final String HOST = "localhost";
     public static final String LOGS_SERVER = "data/logs/server.txt";
 }

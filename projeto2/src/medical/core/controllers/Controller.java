@@ -3,8 +3,8 @@ package medical.core.controllers;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import medical.core.helpers.FileBinaryHandler;
-import medical.core.helpers.FileHandlerInterface;
+import medical.helpers.FileBinaryHandler;
+import medical.helpers.FileHandlerInterface;
 import medical.core.models.ModelInterface;
 
 /**

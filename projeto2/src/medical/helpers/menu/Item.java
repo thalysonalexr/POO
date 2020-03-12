@@ -1,4 +1,4 @@
-package medical.core.helpers.menu;
+package medical.helpers.menu;
 
 /**
  *
@@ -14,8 +14,6 @@ public class Item {
         this.message = message;
         this.callback = callback;
     }
-    
-    
 
     /**
      * @return the option

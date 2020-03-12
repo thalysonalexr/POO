@@ -1,6 +1,7 @@
 package medical.tcp.server;
 
-import medical.core.controllers.MedicoController;
+import java.util.ArrayList;
+import medical.core.controllers.ControllerInterface;
 
 /**
  * design pattern: facade para adicionar configuracoes ao Server
@@ -8,11 +9,11 @@ import medical.core.controllers.MedicoController;
  */
 public class App {
 
-    public static void process() {
+    public static void process(ArrayList<ControllerInterface> controllers) {
         
         ServerInterface server = Server.create();
         
-        server.controllers(MedicoController.create());
+        server.controllers(controllers);
         
         server.listen();
     }

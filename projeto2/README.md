@@ -22,7 +22,7 @@ relacionadas a opção que o cliente escolheu do menu;
       - [x] O servidor não possui menu, somente recebe os comandos relacionados às
 opções do menu que o cliente escolheu;
     * Aplicação Cliente
-      - [] Conecta ao servidor (porta e host configuráveis);
+      - [x] Conecta ao servidor (porta e host configuráveis);
       - [x] Apresentará ao cliente o menu de opções;
       - [x] Cada opção selecionada pelo usuário deverá refletir em uma requisição ao
 servidor, sendo a resposta lida e apresentada ao usuário;

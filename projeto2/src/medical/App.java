@@ -1,7 +1,10 @@
 package medical;
 
+import java.util.ArrayList;
 import medical.core.ApplicationInterface;
-import medical.core.helpers.menu.Menu;
+import medical.core.controllers.ControllerInterface;
+import medical.core.controllers.MedicoController;
+import medical.helpers.menu.Menu;
 
 
 /**
@@ -19,6 +22,10 @@ public class App {
     }
     
     public static void run(ApplicationInterface app) {
-        app.run();
+        ArrayList<ControllerInterface> controllers = new ArrayList<>();
+        
+        controllers.add(MedicoController.create());
+        
+        app.run(controllers);
     }
 }

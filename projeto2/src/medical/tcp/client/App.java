@@ -1,8 +1,8 @@
 package medical.tcp.client;
 
-import medical.core.helpers.Continue;
-import medical.core.helpers.InputID;
-import medical.core.helpers.menu.Menu;
+import medical.helpers.Continue;
+import medical.helpers.InputID;
+import medical.helpers.menu.Menu;
 import medical.core.models.MedicoFactory;
 
 /**

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-import medical.core.helpers.ScanInterface;
+import medical.helpers.ScanInterface;
 
 /**
  *
